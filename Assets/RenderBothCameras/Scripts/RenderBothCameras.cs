@@ -5,23 +5,31 @@ using TMPro;
 public class RenderBothCameras : MonoBehaviour
 {
     [SerializeField]
-    private RawImage frontCamera;
+    private RawImage rawImage;
     [SerializeField]
-    private RawImage backCamera;
-    [SerializeField]
-    private TextMeshProUGUI debugText;
+    private Transform parent;
+
+    private WebCamDevice[] devices;
 
     private void Start()
     {
-        WebCamDevice[] devices = WebCamTexture.devices;
+        devices = WebCamTexture.devices;
 
-        if(devices.Length == 0)
+        if(devices.Length > 0)
         {
-            debugText.text = "No devices found";
-        }else
+            DisplayCamera();
+        }
+    }
 
+    private void DisplayCamera()
+    {
+        for (int i = 0; i < devices.Length; i++)
         {
-            debugText.text = devices.Length.ToString();
+            var tex = Instantiate(rawImage, parent);
+
+            WebCamTexture webCam = new WebCamTexture(devices[0].name);
+            tex.material.mainTexture = webCam;
+            webCam.Play();
         }
     }
 }
