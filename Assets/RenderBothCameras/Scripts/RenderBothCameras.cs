@@ -18,13 +18,10 @@ public class RenderBothCameras : MonoBehaviour
         if(devices.Length == 0)
         {
             debugText.text = "No devices found";
-        }
+        }else
 
-        // for debugging purposes, prints available devices to the console
-        for (int i = 0; i < devices.Length; i++)
         {
-            Debug.Log("Webcam available: " + devices[i].name);
-            debugText.text = "Webcam Available " + devices[i].name;
+            debugText.text = devices.Length.ToString();
         }
     }
 }
