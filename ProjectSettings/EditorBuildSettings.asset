@@ -8,4 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RenderBothCameras/Scenes/RenderBothCameras.unity
     guid: 21e03151f794c834aa286e0097ed2237
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e13f287fba2101341bd73c599ce06246, type: 2}
