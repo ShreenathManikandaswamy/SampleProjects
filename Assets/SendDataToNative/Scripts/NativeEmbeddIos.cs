@@ -8,7 +8,7 @@ public class NativeEmbeddIos : MonoBehaviour
 {
 #if UNITY_IOS
     [DllImport("__Internal")]
-    private static extern void NativeiOSCode_runNativeCode_withoutParameter();
+    private static extern void NativeiOSCode_runNativeCode(string input);
 #endif
 
     private void Start()
@@ -19,7 +19,7 @@ public class NativeEmbeddIos : MonoBehaviour
     private void RunNativeCode(string input)
     {
 #if UNITY_IOS
-        NativeiOSCode_runNativeCode_withoutParameter();
+        NativeiOSCode_runNativeCode(input);
 #else
         Debug.Log("Not in ios Platform);
 #endif

@@ -251,7 +251,7 @@ using UInt = size_t;
 
 #if defined(__OBJC__)
 
-SWIFT_EXTERN void NativeiOSCode_runNativeCode(NSString * _Nonnull input);
+SWIFT_EXTERN void NativeiOSCode_runNativeCode(char const * _Nullable input);
 
 
 SWIFT_EXTERN void NativeiOSCode_runNativeCode_withoutParameter(void);
